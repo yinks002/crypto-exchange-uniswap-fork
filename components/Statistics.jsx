@@ -45,6 +45,20 @@ const Statistics = () => {
           </div>
         </div>
 
+        <div className="col-lg-3 col-sm-6 wow fadeInUp"
+        data-wow-duration = "0.6s"
+        data-wow-delay= "0.6s"
+        >
+
+          <div className="platform-box text-center">
+            <div className="icon">
+              <img src="assets/img/offer-icon-4.png" alt="" />
+            </div>
+            <p className="text">We have the best<br /> exchange rate</p>
+          </div>
+        </div>
+
+
       </div>
     </div>
   </div>;
