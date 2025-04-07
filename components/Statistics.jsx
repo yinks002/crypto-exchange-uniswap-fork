@@ -16,6 +16,11 @@ const Statistics = () => {
             <p className="text">Extra fast <br /> </p>
           </div>
         </div>
+
+        <div className="col-lg-3 col-sm-6 wow fadeInUp"
+        data-wow-duration = "0.4"
+        data-wow-delay= "0.4s"></div>
+
       </div>
     </div>
   </div>;
