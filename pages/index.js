@@ -12,6 +12,7 @@ import {  Header,
   Token,}
  from "../components/index"
  import {CONTEXT} from "../context/context"
+import { Test } from "truffle";
 const index = () => {
   const { TOKEN_SWAP,
     LOAD_TOKEN,
@@ -25,7 +26,7 @@ const index = () => {
     //Open token component
     const [token_1, setToken_1]  = useState();
     const [token_2, setToken_2] = useState();
-    const [openToeken, setOpenToken] = useState(false)
+    const [openToken, setOpenToken] = useState(false)
 
 
     //input data
@@ -38,7 +39,51 @@ const index = () => {
     const [transaction, setTransaction] = useState(undefined);
     const [ratio, setRatio] = useState(undefined)
 
-  return <div>{TOKEN_SWAP}</div>;
+  return (
+   
+
+
+    <div>
+      
+    <Preloader />
+     <Header address={address} connect={connect} />
+     <Hero 
+    setInputAmount = {setInputAmount}
+    setLoader = {setLoader}
+    setOpenToken = {setOpenToken}
+    LOAD_TOKEN = {LOAD_TOKEN}
+    token_1 = {token_1}
+    token_2 = {token_2}
+    setToken_1 = {setToken_1}
+    setToken_2 = {setToken_2}
+    swap= {swap}
+    />
+   <Feature />
+     <Platfrom />
+     <Statistics />
+     <Scurity />
+     <Testomonial />
+     <Footer />
+
+
+      {openToken && (
+       <div className="new_loader">
+         <Token  notifyError= {notifyError} 
+         notifySuccess = {notifySuccess}
+         setOpenToken = {setOpenToken}
+         LOAD_TOKEN= {LOAD_TOKEN}
+         setToken_1 = {setToken_1}
+         setToken_2= {setToken_2}
+         token_1 = {token_1}
+         token_2 = {token_2}
+          />
+       </div>
+     )}
+ 
+   
+   </div>
+)
+  
 };
 
 export default index;
