@@ -71,7 +71,7 @@ export const PROVIDER = ({children}) =>{
             const tokenDetail = await CONNECTING_CONTRACT(token);
             return tokenDetail;
         } catch (error) {
-            const errorMsg= parseErrorMsg(error);
+            const errorMsg = parseErrorMsg(error);
             notifyError(errorMsg);
             console.log(error);        }
     }
