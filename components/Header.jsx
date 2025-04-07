@@ -39,11 +39,28 @@ const Header = ({address, connect}) => {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
 
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <a href= "#home"
-              className="nav-link"
-              >Home</a>
-            </li>
+            {
+              menu.map ((item, index)=>(
+                <li key={item.name} className="nav-item">
+                <a href= {item.link}
+                className="nav-link"
+                >{item.name}</a>
+              </li>
+              ))
+            }
+
+            {
+              address ? (
+                <button  className="new_button">
+                  {shortenAddress(address)}
+                </button>
+              ) : (
+                <button onClick={()=> connect()} className="new_button">
+                  Connect
+                </button>
+              )
+            }
+         
           </ul>
         </div>
       </div>
