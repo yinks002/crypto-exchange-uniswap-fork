@@ -48,6 +48,43 @@ const Token = ({
           <div className="col-xl-4 col-lg-6 wow new_width">
             <div className="exchange">
               <h5 className="ex-head">Cryptocurrency token</h5>
+
+              <div className="exchange-box">
+                <div className="selector">
+                  <p className="text">Search token address</p>
+                  <div className="icon">
+                    <span> {displayToken?.symbol} </span>
+                  </div>
+                </div>
+
+              <div>
+                <div className="form-group">
+                  <input type="text"
+                  onChange={(e) => setSeearchToken(e.target.value)}
+                  placeholder= {displayToken?.address || "search"}
+                  />
+                </div>
+              </div>
+
+
+              </div>
+
+          {
+            displayToken ? (
+              <a onClick={()=> selectToken()}
+              className="button button-1"
+              >
+                {shortenAddress(displayToken?.address)}
+              </a>
+            ) :  (
+              ""
+            )
+          }
+
+
+
+
+
             </div>
           </div>
         </div>
